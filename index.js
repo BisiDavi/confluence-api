@@ -1,8 +1,10 @@
 const express = require("express");
+const googleCalendar = require("./api/gc");
+
 const app = express();
 
-//server
-// app.use("/api", "Hello world");
+app.use(express.json({ extended: false }));
+app.use("/api/gc", googleCalendar);
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
