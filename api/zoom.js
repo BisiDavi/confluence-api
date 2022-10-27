@@ -1,8 +1,8 @@
 const express = require("express");
-const router = express.Router();
 const requestPromise = require("request-promise");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const router = express.Router();
 
 const payload = {
   iss: process.env.ZOOM_API_KEY,
@@ -35,4 +35,18 @@ router.get("/create-meeting", (req, res) => {
     },
     json: true,
   };
+
+  requestPromise(options)
+    .then(function (response) {
+      console.log("response is: ", response);
+      return res
+        .status(200)
+        .send("create meeting result: ", JSON.stringify(response));
+    })
+    .catch(function (err) {
+      console.log("API call failed, reason", err);
+      return res.status(400).send(JSON.stringify(err));
+    });
 });
+
+module.exports = router;
