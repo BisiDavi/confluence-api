@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const dotEnv = require("dotenv");
-const bodyParser = require("body-parser");
 
 const googleCalendarRouter = require("./api/gc");
 const zoomRouter = require("./api/zoom");
@@ -9,9 +8,8 @@ const zoomRouter = require("./api/zoom");
 const app = express();
 
 dotEnv.config();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get("/", (req, res) => {

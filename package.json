@@ -6,7 +6,6 @@
   "author": "Olubisi David",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
