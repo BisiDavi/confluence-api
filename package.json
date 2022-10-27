@@ -1,0 +1,14 @@
+{
+  "name": "confluence-meeting-api",
+  "version": "1.0.0",
+  "description": "this api integrate confluence app to google calendar, outlook and zoom",
+  "main": "index.ts",
+  "author": "Olubisi David",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.7"
+  }
+}
