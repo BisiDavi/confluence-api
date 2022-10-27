@@ -11,7 +11,7 @@ const payload = {
 
 const token = jwt.sign(payload, process.env.ZOOM_API_CLIENT_SECRET);
 
-router.get("/create-meeting", (req, res) => {
+router.post("/create-meeting", (req, res) => {
   const email = "oludavidconnect@gmail.com";
   const { topic, agenda } = req.body;
   const options = {
@@ -39,13 +39,11 @@ router.get("/create-meeting", (req, res) => {
   requestPromise(options)
     .then(function (response) {
       console.log("response is: ", response);
-      return res
-        .status(200)
-        .send("create meeting result: ", JSON.stringify(response));
+      return res.status(200).json(response);
     })
     .catch(function (err) {
       console.log("API call failed, reason", err);
-      return res.status(400).send(JSON.stringify(err));
+      return res.status(400).json(err);
     });
 });
 
