@@ -33,7 +33,6 @@ async function sendEmail(req, res) {
       text: `${req.body.message} \n\n\n\n\n Powered by Meeting & Polls for Confluence`,
     };
     const result = await transport.sendMail(mailOptions);
-    console.log("result", result);
     return res.status(200).json(result);
   } catch (error) {
     console.log("send-email-error", error);
