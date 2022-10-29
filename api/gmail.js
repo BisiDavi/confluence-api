@@ -1,7 +1,7 @@
-require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
+require("dotenv").config();
 const router = express.Router();
 
 const { auth } = require("../constant");
@@ -13,7 +13,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 
 oAuth2Client.setCredentials({
-  refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+  refresh_token: process.env.GMAIL_REFRESH_TOKEN,
 });
 
 async function sendEmail(req, res) {
