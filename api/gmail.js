@@ -32,6 +32,7 @@ async function sendEmail(req, res) {
       text: req.body.message,
     };
     const result = await transport.sendMail(mailOptions);
+    console.log("result", result);
     res.status(200).json(result);
   } catch (error) {
     console.log("send-email-error", error);
