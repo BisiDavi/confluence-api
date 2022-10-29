@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const auth = {
   type: "OAuth2",
   user: "oludavidconnect@gmail.com",
