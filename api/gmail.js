@@ -27,7 +27,7 @@ async function sendEmail(req, res) {
       },
     });
     const mailOptions = {
-      from: "oludavidconnect@gmail.com",
+      from: "Meeting & Polls for Confluence  <oludavidconnect@gmail.com>",
       to: req.body.receipent,
       subject: `This is to notify you about the upcoming meeting - ${req.body.title}`,
       text: req.body.message,
