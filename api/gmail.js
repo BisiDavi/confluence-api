@@ -33,10 +33,10 @@ async function sendEmail(req, res) {
     };
     const result = await transport.sendMail(mailOptions);
     console.log("result", result);
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (error) {
     console.log("send-email-error", error);
-    res.status(400).json(error);
+    return res.status(400).json(error);
   }
 }
 
