@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
-const router = express.Router();
 const { google } = require("googleapis");
+const router = express.Router();
 
 const { auth } = require("../constant");
 
