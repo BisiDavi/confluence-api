@@ -1,7 +1,7 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const router = express.Router();
-const google = require("googleapis");
+const { google } = require("googleapis");
 
 const { auth } = require("../constant");
 
