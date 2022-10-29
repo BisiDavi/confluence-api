@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/gc", googleCalendarRouter);
+app.use("/api/gmail", googleCalendarRouter);
 app.use("/api/zoom", zoomRouter);
 
 const PORT = process.env.PORT || 3000;

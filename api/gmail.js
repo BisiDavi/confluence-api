@@ -2,7 +2,7 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const router = express.Router();
 
-router.post("/send-meeting-email-notification", (req, res) => {
+router.post("/mail/send", (req, res) => {
   async function sendEmail() {
     const mailOptions = {
       from: "oludavidconnect@gmail.com",
