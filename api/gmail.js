@@ -2,10 +2,8 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const router = express.Router();
 const google = require("googleapis");
-const axios = require("axios");
 
 const { auth } = require("../constant");
-const { generateConfig } = require("../utils");
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GMAIL_CLIENT_ID,
@@ -42,3 +40,5 @@ async function sendEmail(req, res) {
 }
 
 router.post("/mail/send", (req, res) => sendEmail(req, res));
+
+module.exports = router;
