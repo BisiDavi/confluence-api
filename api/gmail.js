@@ -26,10 +26,14 @@ async function sendEmail(req, res) {
         accessToken,
       },
     });
+    const subjectText =
+      req.body.type === "meeting"
+        ? "This is to notify you about the upcoming meeting"
+        : "This is to notify you about the Poll";
     const mailOptions = {
       from: "Meeting & Polls for Confluence  <oludavidconnect@gmail.com>",
       to: req.body.receipent,
-      subject: `This is to notify you about the upcoming meeting - ${req.body.title}`,
+      subject: `${subjectText} - ${req.body.title}`,
       text: `${req.body.message} \n\n\n\n\n Powered by Meeting & Polls for Confluence`,
     };
     const result = await transport.sendMail(mailOptions);
