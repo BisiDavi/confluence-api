@@ -50,6 +50,6 @@ async function sendEmail(req, res) {
   }
 }
 
-router.post("/", (req, res) => sendEmail(req, res));
+router.post("/send", (req, res) => sendEmail(req, res));
 
 module.exports = router;
