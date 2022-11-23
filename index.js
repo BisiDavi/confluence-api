@@ -5,7 +5,7 @@ const dotEnv = require("dotenv");
 const googleCalendarRouter = require("./api/gc");
 const gmailRouter = require("./api/gmail");
 const sendEmailRouter = require("./api/send-email");
-const sendEmailViaGmailRouter = require("./api/send-email-via-gmail");
+const sendEmailViaGmailRouter = require("./api/send-gmail");
 const zoomRouter = require("./api/zoom");
 
 const app = express();
