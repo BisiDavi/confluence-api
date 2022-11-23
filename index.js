@@ -5,6 +5,7 @@ const dotEnv = require("dotenv");
 const googleCalendarRouter = require("./api/gc");
 const gmailRouter = require("./api/gmail");
 const sendEmailRouter = require("./api/send-email");
+const sendEmailViaGmailRouter = require("./api/send-email-via-gmail");
 const zoomRouter = require("./api/zoom");
 
 const app = express();
@@ -22,6 +23,7 @@ app.use("/api/gc", googleCalendarRouter);
 app.use("/api/gmail", gmailRouter);
 app.use("/api/email", sendEmailRouter);
 app.use("/api/zoom", zoomRouter);
+app.use("/api/send", sendEmailViaGmailRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

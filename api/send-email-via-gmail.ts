@@ -1,6 +1,8 @@
-const path = require("path");
 const { google } = require("googleapis");
 const { authenticate } = require("@google-cloud/local-auth");
+const express = require("express");
+const router = express.Router();
+const path = require("path");
 
 const gmail = google.gmail("v1");
 
@@ -44,3 +46,6 @@ async function sendEmail(req, res) {
     return res.status(400).json(error);
   }
 }
+
+router.post("/mail", (req, res) => sendEmail(req, res));
+module.exports = router;
