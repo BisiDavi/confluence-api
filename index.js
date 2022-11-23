@@ -23,7 +23,7 @@ app.use("/api/gc", googleCalendarRouter);
 app.use("/api/gmail", gmailRouter);
 app.use("/api/email", sendEmailRouter);
 app.use("/api/zoom", zoomRouter);
-app.use("/api/send", sendEmailViaGmailRouter);
+app.use("/api/notify", sendEmailViaGmailRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
