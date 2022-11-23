@@ -18,6 +18,14 @@ oAuth2Client.setCredentials({
 
 async function sendEmail(req, res) {
   const { subject, title, message, receipent, from } = req.body;
+  console.log(
+    "subject, title, message, receipent, from ",
+    subject,
+    title,
+    message,
+    receipent,
+    from
+  );
   try {
     const accessToken = await oAuth2Client.getAccessToken();
     const transport = nodemailer.createTransport({
